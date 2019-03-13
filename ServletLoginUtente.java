@@ -13,14 +13,14 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class ServletPrincipale
  */
-@WebServlet("/ServletLoginAmministratore")
-public class ServletLoginAmministratore extends HttpServlet {
+@WebServlet("/ServletLoginUtente")
+public class ServletLoginUtente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ServletLoginAmministratore() {
+	public ServletLoginUtente() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -52,24 +52,16 @@ public class ServletLoginAmministratore extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		Login lg = new Login(un, pw);
-		if (lg.getAmministratore()) {
+		if (lg.getUtente()) {
 			out.println("<!DOCTYPE html>");
 			out.println("<html>");
 			out.println("<head>");
 			out.println("<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>");
 			out.println("<title> Amministrazione </title>");
 			out.println("</head>");
-			out.println("<body>");
+			out.println("<body>");			
 			
 			
-			
-			out.println("<h1>Scelta Gestione</h1>");
-			out.println("<form method=\"get\" action=\"http://localhost:8088/percorsiTuristici/GestionePercorsi.html\">");
-			out.println("<button type=\"submit\"> Gestione Percorsi</button>");
-			out.println("</form>");
-			out.println("<BR>");
-			out.println("<form method=\"get\" action=\"http://localhost:8088/percorsiTuristici/GestioneUtenti.html\">");
-			out.println("<button type=\"submit\"> Gestione Utenti</button>");
 			out.println("</form>");
 			
 			try {
